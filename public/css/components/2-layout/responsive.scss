@@ -1,0 +1,41 @@
+@include xlg-xxlg {
+  @include roadmap-xlg-xxlg;
+  @include nav-xlg-xxlg;
+}
+@include lg-xlg {
+  h2 {
+    font-size: 42px;
+    line-height: 52px;
+  }
+  @include header-lg-xlg;
+  @include nav-lg-xlg;
+
+  @include roadmap-lg-xlg;
+  @include welcome-lg-xlg;
+  @include mint-lg-xlg;
+  @include story-lg-xlg;
+}
+@include md-lg {
+  .auto__container {
+    padding: 0 20px;
+  }
+}
+@include sm-md {
+  @include footer-sm-md;
+  @include header-sm-md;
+  @include nav-sm-md;
+
+  @include welcome-sm-md;
+  @include story-sm-md;
+  @include rarity-sm-md;
+  @include team-sm-md;
+  @include roadmap-sm-md;
+}
+@include xsm-sm {
+  h6 {
+    font-size: 18px;
+    line-height: 24px;
+  }
+  @include faq-xsm-sm;
+  @include mint-xsm-sm;
+}

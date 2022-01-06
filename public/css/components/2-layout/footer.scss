@@ -1,0 +1,63 @@
+.footer {
+  background: $main;
+  padding: 14px 0;
+  &__inner {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    &-terms {
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 17px;
+      color: $white;
+    }
+    &-copy {
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 17px;
+      text-transform: uppercase;
+      color: #ffffff;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      @include transform;
+    }
+    &-social {
+      display: flex;
+      align-items: center;
+      a {
+        margin-right: 24px;
+        height: 24px;
+        width: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @include transition;
+        &:hover {
+          opacity: 0.8;
+        }
+        img {
+          max-height: 24px;
+          max-width: 24px;
+        }
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}
+@mixin footer-sm-md {
+  .footer {
+    &__inner {
+      flex-direction: column;
+      &-copy {
+        position: static;
+        text-align: center;
+        @include transformReset;
+        margin: 10px 0;
+      }
+    }
+  }
+}

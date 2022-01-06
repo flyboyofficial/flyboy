@@ -1,0 +1,45 @@
+.spinbox {
+  display: flex;
+  align-items: center;
+
+  input {
+    width: 60%;
+    padding: 0 10px;
+    font-weight: 800;
+    font-size: 18px;
+    line-height: 1;
+    text-align: center;
+    background: none;
+    display: block;
+    color: #af4040;
+    &::placeholder {
+      color: #af4040;
+    }
+  }
+  button {
+    font-weight: 800;
+    font-size: 18px;
+    line-height: 27px;
+    text-align: center;
+    color: #0b0b0b;
+    background: none;
+    width: 20%;
+    cursor: pointer;
+  }
+}
+.max {
+  background: #ffffff;
+  border: 2px solid #70440d;
+  box-sizing: border-box;
+  border-radius: 29px;
+  font-weight: 800;
+  font-size: 16px;
+  line-height: 24px;
+  color: #70440d;
+  padding: 7px 30px;
+  cursor: pointer;
+  @include transition;
+  &:hover {
+    opacity: 0.8;
+  }
+}
