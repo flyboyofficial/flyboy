@@ -821,6 +821,10 @@ p a {
 }
 .roadmapSlider .slick-slide {
   margin-right: 42px;
+  height: auto !important;
+}
+.roadmapSlider .slick-slide > div {
+  height: 100% !important;
 }
 .roadmapSlider .slick-track {
   display: -webkit-box !important;

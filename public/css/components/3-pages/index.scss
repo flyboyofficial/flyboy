@@ -350,7 +350,10 @@
     }
     .slick-slide {
       margin-right: 42px;
-
+      height: auto !important;
+      & > div {
+        height: 100% !important;
+      }
     }
     .slick-track {
       display: flex !important;
