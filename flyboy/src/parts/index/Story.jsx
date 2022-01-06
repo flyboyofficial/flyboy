@@ -13,14 +13,15 @@ export default function Story() {
         <img src="images/vectors/cloud-right.svg" alt="" />
       </div>
       <div className="auto__container">
-        <h2>The story</h2>
+        <h2>FlyBoys’ Flying Club (FBFC)</h2>
         <div className="story__inner">
           <p>
-            We are presenting you 10.000 unique bear NFTs. The Bear is a
-            one-of-a-kind digital collection of NFTs stored on the Ethereum
-            Blockchain. Each Mouse is generated algorithmically by combining
-            various traits, and each one is minutely picked and constructed to
-            serve a certain role in NFT.
+            Plots of Sandbox land have been donated by the founders to create
+            the very first virtual flying club in the metaverse world. We
+            already have a Sandbox designer working on creating our hangers,
+            planes and runway. In the long run, FBFC will be the go-to place for
+            all aviation enthusiasts to gather and decide on the future of the
+            club and community.
           </p>
         </div>
       </div>

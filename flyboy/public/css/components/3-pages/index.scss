@@ -350,6 +350,7 @@
     }
     .slick-slide {
       margin-right: 42px;
+
     }
     .slick-track {
       display: flex !important;
@@ -364,6 +365,7 @@
       border-radius: 32px;
       padding: 38px 28px;
       position: relative;
+      height: 100%;
       p {
         color: $black;
         text-align: left;

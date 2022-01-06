@@ -1,23 +1,23 @@
 export const TeamModul = [
   {
     id: "team-1",
-    alt: "mimi",
+    alt: "Andy",
     image: "images/nft/nft-3.png",
-    title: "Mimi",
-    text: " Le art is reborn in la digital form. My work is now leading reform!",
+    title: "Andy",
+    text: "Crypto enthusiast. The real flyboy. Specializing in making bed and serving coffee.",
   },
   {
     id: "team-2",
-    alt: "nana",
+    alt: "Andre",
     image: "images/nft/nft-1.png",
-    title: "Nana",
-    text: " Le art is reborn in la digital form. My work is now leading reform!",
+    title: "Andre",
+    text: "Hola! ",
   },
   {
     id: "team-3",
-    alt: "lola",
+    alt: "Joseph",
     image: "images/nft/nft-2.png",
-    title: "Lola",
-    text: " Le art is reborn in la digital form. My work is now leading reform!",
+    title: "Joseph",
+    text: "The art wizard with a pair of magic hands.",
   },
 ];

@@ -19,10 +19,6 @@ export default function Mint() {
           <h2>Mint now</h2>
           <p>3500 Bear NFT (0.045 ETH/ 1 Bear)</p>
           <div className="mint__inner-row">
-            <div className="mint__inner-row-text">my eth balance</div>
-            <div className="mint__inner-row-balance">0 ETH</div>
-          </div>
-          <div className="mint__inner-row">
             <div className="mint__inner-row-text">mint amount</div>
             <div className="mint__inner-input">
               <div className="spinbox">

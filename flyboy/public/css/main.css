@@ -299,6 +299,12 @@ p a {
   -webkit-animation: sticky 0.2s linear;
           animation: sticky 0.2s linear;
 }
+.header .button {
+  padding: 10px 15px;
+  font-size: 16px;
+  line-height: 1;
+  margin-left: 15px;
+}
 
 .anchorPoint {
   position: relative;
@@ -832,6 +838,7 @@ p a {
   border-radius: 32px;
   padding: 38px 28px;
   position: relative;
+  height: 100%;
 }
 .roadmapSlider__item p {
   color: #000;
@@ -1407,7 +1414,7 @@ p a {
   }
 
   .nav__inner-link {
-    margin-right: 25px;
+    margin-right: 15px;
   }
   .nav__inner-social-link {
     margin-right: 15px;
@@ -1484,8 +1491,8 @@ p a {
   .nav__inner-social {
     margin: 15px;
   }
-  .nav .btn {
-    margin: 15px 0;
+  .nav .button {
+    margin: 15px;
     text-align: center;
   }
 

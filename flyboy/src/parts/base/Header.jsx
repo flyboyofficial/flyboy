@@ -72,16 +72,19 @@ export default function Header() {
                 FAQ
               </a>
               <div className="nav__inner-social">
-                <a href="#" className="nav__inner-social-link">
-                  <img src="images/icons/facebook.svg" alt="" />
+                <a href="https://www.instagram.com/flyboynft" className="nav__inner-social-link">
+                  <img src="images/icons/instagram.svg" alt="" />
                 </a>
-                <a href="#" className="nav__inner-social-link">
+                <a href="https://www.twitter.com/flyboynft" className="nav__inner-social-link">
                   <img src="images/icons/twitter.svg" alt="" />
                 </a>
-                <a href="#" className="nav__inner-social-link">
+                <a href="https://discord.gg/PCTF7wrtJ3" className="nav__inner-social-link">
                   <img src="images/icons/discord.svg" alt="" />
                 </a>
               </div>
+              <a href="#" className="button primary">
+                Connect wallet
+              </a>
             </div>
           </nav>
           <div
