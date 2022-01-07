@@ -116,7 +116,7 @@ export default class RoadmapSlider extends Component {
               <div className="roadmapSlider__item-plane">
                 <img src="images/plane/plane-brown.svg" alt="" />
               </div>
-              <div className="roadmapSlider__item-index brown">04</div>
+              <div className="roadmapSlider__item-index yellow">05</div>
               <h5>Post-Launch</h5>
               <p>
                 We want you all to be proud of being a FlyBoy owner. In the end,
