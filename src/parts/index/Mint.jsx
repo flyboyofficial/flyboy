@@ -16,8 +16,8 @@ export default function Mint() {
         <form action="#" className="mint__inner">
           <div className="mint__inner-line left"></div>
           <div className="mint__inner-line right"></div>
-          <h2>Mint now</h2>
-          <p>3500 Bear NFT (0.045 ETH/ 1 Bear)</p>
+          <h2>Mint soon</h2>
+          <p>5150 Bear NFT (0.06 ETH/ 1 Bear)</p>
           <div className="mint__inner-row">
             <div className="mint__inner-row-text">mint amount</div>
             <div className="mint__inner-input">
@@ -30,7 +30,7 @@ export default function Mint() {
                   type="number"
                   value={counter}
                   min="0"
-                  max="20"
+                  max="5"
                   readOnly="readonly"
                 />
                 <button type="button" onClick={incrementCounter}>
@@ -39,10 +39,6 @@ export default function Mint() {
               </div>
               <div className="max">MAX</div>
             </div>
-          </div>
-          <div className="mint__inner-total">
-            <div className="mint__inner-row-text">total price</div>
-            <div className="mint__inner-row-price">1.565 eth</div>
           </div>
           <div className="mint__inner-footer">
             <button type="submit" className="button primary">

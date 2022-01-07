@@ -1010,9 +1010,7 @@ p a {
           justify-content: space-between;
   padding: 24px 0;
   border-bottom: 1px solid #000;
-}
-.mint__inner-row:last-child {
-  border: none;
+  margin-bottom: 24px;
 }
 .mint__inner-row-text {
   font-weight: 500;

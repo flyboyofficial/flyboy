@@ -127,14 +127,11 @@ export default class RoadmapSlider extends Component {
                 then executed.
                 <br />
                 <br />
-                Together, we explore and conquer the metaverse world: we will
-                establish the world's first flying club in the metaverse world;
-                we will collectively own a wealth of land plots in the metaverse
-                world; we will be one of the chillest clubs in the nft and
-                metaverse community.
-                <br />
-                <br />
-                WAGMI, LFG!
+                Once the project is sold out at 25%, we will buy more land plots
+                in Sandbox and Decentraland. Members will be able to borrow one
+                of our houses to host their own events. Any future proceeds from
+                selling or renting out the houses will be shared equally with
+                the members.
               </p>
             </div>
           </Slider>

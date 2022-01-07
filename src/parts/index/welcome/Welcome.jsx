@@ -26,14 +26,6 @@ export default function Welcome() {
               Aviationtag.com. The utilities and future of the FlyBoys will be a
               COLLECTIVE DECISION of all members upon voting.
             </p>
-            <div className="welcome__inner-content-row">
-              <a href="/" className="button secondary">
-                mint now
-              </a>
-              <a href="/" className="button primary">
-                Buy on opeansea
-              </a>
-            </div>
           </div>
           <WelcomeSlider />
         </div>

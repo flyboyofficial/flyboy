@@ -532,9 +532,7 @@
       justify-content: space-between;
       padding: 24px 0;
       border-bottom: 1px solid $black;
-      &:last-child {
-        border: none;
-      }
+      margin-bottom: 24px;
       &-text {
         font-weight: 500;
         font-size: 18px;
@@ -551,7 +549,7 @@
       }
       &-balance {
         font-weight: 600;
-        font-size: 18px;
+        font-size: 18px; 
         line-height: 27px;
         text-transform: uppercase;
         color: #1b1b1b;
