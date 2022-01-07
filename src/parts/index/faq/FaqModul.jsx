@@ -4,7 +4,7 @@ export const FaqModul = [
     id: "faq-1",
     title: "What is Flyboy? ",
     image: "images/icons/bear.svg",
-    text: "It’s more than justnnnn an avatar. It is also you access to our metaverse experience in Sandbox - the FlyBoys’ Flying Club. Also, multiple physical utilities have been planned, with the first physical utility being a personalised aviation tag of your own, from the famous Aviationtag.com!",
+    text: "It’s more than just an avatar. It is also you access to our metaverse experience in Sandbox - the FlyBoys’ Flying Club. Also, multiple physical utilities have been planned, with the first physical utility being a personalised aviation tag of your own, from the famous Aviationtag.com!",
   },
   {
     alt: "alt-2",
