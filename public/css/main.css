@@ -517,6 +517,14 @@ p a {
 .welcome__inner-content .button {
   margin: 0 12px;
 }
+.welcomeSlider {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
 .welcomeSlider .slick-slide {
   -webkit-transition: all 0.2s ease-in-out 0s;
   transition: all 0.2s ease-in-out 0s;
@@ -525,7 +533,7 @@ p a {
 .welcomeSlider .slick-center {
   -webkit-transform: scale(1.4);
           transform: scale(1.4);
-  z-index: 1000;
+  z-index: 1;
   position: relative;
 }
 .welcomeSlider .slick-track {
@@ -535,58 +543,6 @@ p a {
   width: 50%;
   max-width: 450px;
   position: relative;
-}
-.welcomeSlider__outer .prev {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  width: 24px;
-  cursor: pointer;
-  -webkit-transition: all 0.2s ease-in-out 0s;
-  transition: all 0.2s ease-in-out 0s;
-  -moz-transition: all 0.2s ease-in-out 0s;
-  background: none;
-  position: absolute;
-  top: calc(100% + 32px);
-  left: calc(50% - 120px);
-}
-.welcomeSlider__outer .prev:hover {
-  opacity: 0.8;
-}
-.welcomeSlider__outer .prev img {
-  width: 100%;
-}
-.welcomeSlider__outer .next {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  width: 24px;
-  cursor: pointer;
-  -webkit-transition: all 0.2s ease-in-out 0s;
-  transition: all 0.2s ease-in-out 0s;
-  -moz-transition: all 0.2s ease-in-out 0s;
-  background: none;
-  position: absolute;
-  top: calc(100% + 32px);
-  right: calc(50% - 120px);
-}
-.welcomeSlider__outer .next:hover {
-  opacity: 0.8;
-}
-.welcomeSlider__outer .next img {
-  width: 100%;
 }
 .welcomeSlider__outer-plane {
   position: absolute;
@@ -640,7 +596,7 @@ p a {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin: 30px 0;
+  margin: 50px 0 30px 0;
 }
 .welcomeSlider__arrows span {
   display: block;

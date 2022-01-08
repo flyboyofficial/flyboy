@@ -1,5 +1,5 @@
 import React from "react";
-import WelcomeSlider from "./WelcomeSlider";
+import WelcomeCollection from "./WelcomeCollection";
 
 export default function Welcome() {
   return (
@@ -27,7 +27,7 @@ export default function Welcome() {
               COLLECTIVE DECISION of all members upon voting.
             </p>
           </div>
-          <WelcomeSlider />
+          <WelcomeCollection />
         </div>
       </div>
     </section>

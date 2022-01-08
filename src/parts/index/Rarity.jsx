@@ -12,10 +12,10 @@ export default function Rarity() {
         </p>
         <div className="rarity__inner">
           <div className="rarity__inner-nft">
-            <img src="images/nft/nft-4.png" alt="" />
+            <img src="images/rarity/rarity-2.png" alt="" />
           </div>
           <div className="rarity__inner-nft">
-            <img src="images/nft/nft-1.png" alt="" />
+            <img src="images/rarity/rarity-1.png" alt="" />
           </div>
         </div>
       </div>

@@ -43,12 +43,14 @@
     }
   }
   &Slider {
+    display: flex;
+    align-items: center;
     .slick-slide {
       @include transition;
     }
     .slick-center {
       transform: scale(1.4);
-      z-index: 1000;
+      z-index: 1;
       position: relative;
     }
     .slick-track {
@@ -58,42 +60,42 @@
       width: 50%;
       max-width: 450px;
       position: relative;
-      .prev {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 24px;
-        cursor: pointer;
-        @include transition;
-        background: none;
-        position: absolute;
-        top: calc(100% + 32px);
-        left: calc(50% - 120px);
-        &:hover {
-          opacity: 0.8;
-        }
-        img {
-          width: 100%;
-        }
-      }
-      .next {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 24px;
-        cursor: pointer;
-        @include transition;
-        background: none;
-        position: absolute;
-        top: calc(100% + 32px);
-        right: calc(50% - 120px);
-        &:hover {
-          opacity: 0.8;
-        }
-        img {
-          width: 100%;
-        }
-      }
+      // .prev {
+      //   display: flex;
+      //   align-items: center;
+      //   justify-content: center;
+      //   width: 24px;
+      //   cursor: pointer;
+      //   @include transition;
+      //   background: none;
+      //   position: absolute;
+      //   top: calc(100% + 32px);
+      //   left: calc(50% - 120px);
+      //   &:hover {
+      //     opacity: 0.8;
+      //   }
+      //   img {
+      //     width: 100%;
+      //   }
+      // }
+      // .next {
+      //   display: flex;
+      //   align-items: center;
+      //   justify-content: center;
+      //   width: 24px;
+      //   cursor: pointer;
+      //   @include transition;
+      //   background: none;
+      //   position: absolute;
+      //   top: calc(100% + 32px);
+      //   right: calc(50% - 120px);
+      //   &:hover {
+      //     opacity: 0.8;
+      //   }
+      //   img {
+      //     width: 100%;
+      //   }
+      // }
       &-plane {
         position: absolute;
         bottom: 100%;
@@ -126,7 +128,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      margin: 30px 0;
+      margin: 50px 0 30px 0;
       span {
         display: block;
         margin: 0 12px;
@@ -549,7 +551,7 @@
       }
       &-balance {
         font-weight: 600;
-        font-size: 18px; 
+        font-size: 18px;
         line-height: 27px;
         text-transform: uppercase;
         color: #1b1b1b;

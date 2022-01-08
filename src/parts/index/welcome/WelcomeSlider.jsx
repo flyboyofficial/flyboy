@@ -36,21 +36,12 @@ export default class WelcomeSlider extends Component {
             <div className="welcomeSlider__item">
               <img src="images/nft/nft-5.png" alt="" />
             </div>
-            <div className="welcomeSlider__item">
-              <img src="images/nft/nft-7.png" alt="" />
-            </div>
-            <div className="welcomeSlider__item">
-              <img src="images/nft/nft-5.png" alt="" />
-            </div>
-            <div className="welcomeSlider__item">
+            <div className="welcomeSlider__item slick-center">
               <img src="images/nft/nft-6.png" alt="" />
             </div>
             <div className="welcomeSlider__item">
               <img src="images/nft/nft-7.png" alt="" />
               
-            </div>
-            <div className="welcomeSlider__item">
-              <img src="images/nft/nft-6.png" alt="" />
             </div>
           </Slider>
         </div>
