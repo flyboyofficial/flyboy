@@ -6,9 +6,9 @@ export default function Rarity() {
       <div className="auto__container">
         <h2>Rarity</h2>
         <p>
-          Over <a href="/">200 unique traits</a> with varying rarity across all
+          Over <a href="/">100 unique traits</a> with varying rarity across all
           categories will be used to generate all our Bear. There will be the
-          following 9 categories.
+          following 7 categories.
         </p>
         <div className="rarity__inner">
           <div className="rarity__inner-nft">
