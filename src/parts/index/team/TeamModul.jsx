@@ -16,7 +16,7 @@ export const TeamModul = [
   {
     id: "team-3",
     alt: "Joseph",
-    image: "images/nft/nft-2.png",
+    image: "images/nft/joflyboy.png",
     title: "Joseph",
     text: "The art wizard with a pair of magic hands.",
   },
