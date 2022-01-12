@@ -4,7 +4,7 @@ export const TeamModul = [
     alt: "Andy",
     image: "images/nft/ogflyboy.png",
     title: "Andy",
-    text: "Crypto enthusiast. YOLO is his motto.",
+    text: "Founder, Marketing & Development. OG FlyBoy.",
   },
   {
     id: "team-2",
