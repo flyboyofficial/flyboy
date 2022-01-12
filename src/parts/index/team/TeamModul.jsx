@@ -2,16 +2,16 @@ export const TeamModul = [
   {
     id: "team-1",
     alt: "Andy",
-    image: "images/nft/nft-3.png",
+    image: "images/nft/ogflyboy.png",
     title: "Andy",
     text: "Crypto enthusiast. The real flyboy. Specializing in making bed and serving coffee.",
   },
   {
     id: "team-2",
     alt: "Andre",
-    image: "images/nft/nft-1.png",
+    image: "images/nft/andreflyboy.png",
     title: "Andre",
-    text: "Hola! ",
+    text: "Software Developer specializing in Blockchain Technology & Smart Contracts. +2 years experience in the field and has contributed in over a dozen collections ",
   },
   {
     id: "team-3",
