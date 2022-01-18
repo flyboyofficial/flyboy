@@ -25,7 +25,7 @@ export default function Mint() {
            
           var stage = document.getElementById('mint-button').innerHTML;
 
-          if (stage == 'Connect Wallet') {
+          if (stage === 'Connect Wallet') {
             document.getElementById('mint-button').innerHTML = 'Mint';
             return;
           }
@@ -63,7 +63,7 @@ export default function Mint() {
                     //alert(mint_fee)
                     const amount = document.getElementById('value').value;
 
-                    if (amount == 0) {
+                    if (amount === 0) {
                        alert("No Quantity Selected!");
                        return;
                     }
@@ -94,7 +94,7 @@ export default function Mint() {
               const mint_fee = await contract.methods.mintCost().call();
               const amount = document.getElementById('value').value;
 
-              if (amount == 0) {
+              if (amount === 0) {
                   alert("No Quantity Selected!");
                   return;
               }
