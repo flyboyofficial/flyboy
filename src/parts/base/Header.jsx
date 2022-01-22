@@ -82,7 +82,7 @@ export default function Header() {
                   <img src="images/icons/discord.svg" alt="" />
                 </a>
               </div>
-              <a href="#" className="button primary">
+              <a href="#mint-button" className="button primary">
                 Connect wallet
               </a>
             </div>
