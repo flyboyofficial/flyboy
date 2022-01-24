@@ -2,6 +2,10 @@
   "name": "flyboy",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "16.13.0",
+    "npm": "8.1.0"
+  },
   "dependencies": {
     "@alch/alchemy-web3": "^1.1.9",
     "@testing-library/jest-dom": "^5.16.1",
