@@ -1,7 +1,8 @@
 import { React, useState } from "react";
 import Web3 from "web3"
 
-export default function Mint() {
+export default function Mint(props) {
+  const {address, connect} = props;
   const [counter, setCounter] = useState(1);
   const incrementCounter = () => setCounter(counter + 1);
   let decrementCounter = () => setCounter(counter - 1);
@@ -38,7 +39,7 @@ export default function Mint() {
                 const url = "https://flyboyofficial.github.io/whitelist.json"
 
                 const json = await fetch(url)
-                  .then((res: any) => res.json())
+                  .then((res) => res.json())
                   .catch(() => {
                     console.log("Error retrieving whitelist addresses")
                   })
@@ -47,7 +48,7 @@ export default function Mint() {
 
                 if (json) {
                   //const accounts = await ethereum.request({ method: 'eth_requestAccounts' }); //if I call accounts again it works but really inefficient, whats the solution?
-                  const found = json.map((entry: any) => entry.toLowerCase()).includes(accounts[0].toLowerCase(), 0)
+                  const found = json.map((entry) => entry.toLowerCase()).includes(accounts[0].toLowerCase(), 0)
 
                   if (found) {
                     var message = window.web3.utils.soliditySha3('0x90A9e219d8f16f15663068C33E2D36813B6A1512', accounts[0]);
@@ -963,9 +964,13 @@ export default function Mint() {
             </div>
           </div>
           <div className="mint__inner-footer">
-            <button type="button" id="mint-button" onClick={mintButton} className="button primary">
+            {!address ? 
+            <button type="button" id="mint-button" onClick={connect} className="button primary">
               Connect Wallet
             </button>
+            :
+            <button type="button" className="button primary">MINT</button>
+            }
           </div>
         </form>
       </div>

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 
-export default function Header() {
+export default function Header(props) {
+  const { address, connect } = props;
   const [menu, setMenu] = useState(false);
   var links = document.querySelectorAll(".nav__inner-link");
 
@@ -82,9 +83,17 @@ export default function Header() {
                   <img src="images/icons/discord.svg" alt="" />
                 </a>
               </div>
-              <a href="#mint-button" className="button primary">
-                Connect wallet
-              </a>
+              <button className="button primary" onClick={connect}>
+                {address !== "" &&
+                  `${address.slice(0, 6)}...${address.slice(
+                    address.length - 4,
+                    address.length
+                  )}`
+                }
+                {address === '' &&
+                  `Connect MetaMask`
+                }
+              </button>
             </div>
           </nav>
           <div
