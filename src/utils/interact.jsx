@@ -135,96 +135,96 @@ export const updateMessage = async (address, message) => {
   }
 };
 
-export const mint_normal = async (address, mintCount) => {
-  if (!window.ethereum || address === null) {
-    return {
-      status:
-        "💡 Connect your Metamask wallet to update the message on the blockchain.",
-    };
-  }
-  //set up transaction parameters
-  const transactionParameters = {
-    to: contractAddress, // Required except during contract publications.
-    from: address, // must match user's active address.
-    value: web3.utils.toHex(web3.utils.toBN(`${50000000000000000*mintCount}`)),
-    gasLimit: 62000,
-    data: CryptoKittenNFT.methods
-      .mint_normal(address, mintCount)
-      .encodeABI(),
-  };
-  console.log(transactionParameters.value);
-  try {
-    const txHash = await window.ethereum.request({
-      method: "eth_sendTransaction",
-      params: [transactionParameters],
-    });
+// export const mint_normal = async (address, mintCount) => {
+//   if (!window.ethereum || address === null) {
+//     return {
+//       status:
+//         "💡 Connect your Metamask wallet to update the message on the blockchain.",
+//     };
+//   }
+//   //set up transaction parameters
+//   const transactionParameters = {
+//     to: contractAddress, // Required except during contract publications.
+//     from: address, // must match user's active address.
+//     value: web3.utils.toHex(web3.utils.toBN(`${50000000000000000*mintCount}`)),
+//     gasLimit: 62000,
+//     data: CryptoKittenNFT.methods
+//       .mint_normal(address, mintCount)
+//       .encodeABI(),
+//   };
+//   console.log(transactionParameters.value);
+//   try {
+//     const txHash = await window.ethereum.request({
+//       method: "eth_sendTransaction",
+//       params: [transactionParameters],
+//     });
 
-    //return {
-    //   status: (
-    //     <span>
-    //       ✅{" "}
-    //       <a  rel="noreferrer"  target="_blank" href={`https://rinkeby.etherscan.io/tx/${txHash}`}>
-    //         View the status of your transaction on Etherscan!
-    //       </a>
-    //       <br />
-    //       ℹ️ Once the transaction is verified by the network, the message will
-    //       be updated automatically.
-    //     </span>
-    //   ),
-    // };
-  } catch (error) {
-    console.log(error);
-    return {
-      status: "😥 " + error.message,
-    };
-  }  
-}
+//     //return {
+//     //   status: (
+//     //     <span>
+//     //       ✅{" "}
+//     //       <a  rel="noreferrer"  target="_blank" href={`https://rinkeby.etherscan.io/tx/${txHash}`}>
+//     //         View the status of your transaction on Etherscan!
+//     //       </a>
+//     //       <br />
+//     //       ℹ️ Once the transaction is verified by the network, the message will
+//     //       be updated automatically.
+//     //     </span>
+//     //   ),
+//     // };
+//   } catch (error) {
+//     console.log(error);
+//     return {
+//       status: "😥 " + error.message,
+//     };
+//   }  
+// }
 
-export const mint_genesis = async (address, mintCount) => {
-  if (!window.ethereum || address === null) {
-    return {
-      status:
-        "💡 Connect your Metamask wallet to update the message on the blockchain.",
-    };
-  }
-  //set up transaction parameters
-  console.log(mintCount);
-  const transactionParameters = {
-    to: contractAddress, // Required except during contract publications.
-    from: address, // must match user's active address.
-    value: web3.utils.toHex(web3.utils.toBN(`${500000000000000000*mintCount}`)),
-    gasLimit: 62000,
-    data: CryptoKittenNFT.methods
-      .mint_genesis(address, mintCount)
-      .encodeABI(),
-  };
-  console.log(transactionParameters.value);
-  try {
-    const txHash = await window.ethereum.request({
-      method: "eth_sendTransaction",
-      params: [transactionParameters],
-    });
+// export const mint_genesis = async (address, mintCount) => {
+//   if (!window.ethereum || address === null) {
+//     return {
+//       status:
+//         "💡 Connect your Metamask wallet to update the message on the blockchain.",
+//     };
+//   }
+//   //set up transaction parameters
+//   console.log(mintCount);
+//   const transactionParameters = {
+//     to: contractAddress, // Required except during contract publications.
+//     from: address, // must match user's active address.
+//     value: web3.utils.toHex(web3.utils.toBN(`${500000000000000000*mintCount}`)),
+//     gasLimit: 62000,
+//     data: CryptoKittenNFT.methods
+//       .mint_genesis(address, mintCount)
+//       .encodeABI(),
+//   };
+//   console.log(transactionParameters.value);
+//   try {
+//     const txHash = await window.ethereum.request({
+//       method: "eth_sendTransaction",
+//       params: [transactionParameters],
+//     });
 
-    //return {
-    //   status: (
-    //     <span>
-    //       ✅{" "}
-    //       <a  rel="noreferrer"  target="_blank" href={`https://rinkeby.etherscan.io/tx/${txHash}`}>
-    //         View the status of your transaction on Etherscan!
-    //       </a>
-    //       <br />
-    //       ℹ️ Once the transaction is verified by the network, the message will
-    //       be updated automatically.
-    //     </span>
-    //   ),
-    // };
-  } catch (error) {
-    console.log(error);
-    return {
-      status: "😥 " + error.message,
-    };
-  }  
-}
+//     //return {
+//     //   status: (
+//     //     <span>
+//     //       ✅{" "}
+//     //       <a  rel="noreferrer"  target="_blank" href={`https://rinkeby.etherscan.io/tx/${txHash}`}>
+//     //         View the status of your transaction on Etherscan!
+//     //       </a>
+//     //       <br />
+//     //       ℹ️ Once the transaction is verified by the network, the message will
+//     //       be updated automatically.
+//     //     </span>
+//     //   ),
+//     // };
+//   } catch (error) {
+//     console.log(error);
+//     return {
+//       status: "😥 " + error.message,
+//     };
+//   }  
+// }
 
 
 export const Reserve = async (address, mintCount) => {

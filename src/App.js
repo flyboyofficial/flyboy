@@ -15,59 +15,83 @@ import {
  
   getCurrentWalletConnected,
  
-} from "./utils/interact"
+} from "./utils/interact.jsx"
 
 export default function App() {
 
-  const [address, setWallet] = useState('');
+  const [address, setWallet] = useState("");
+	// const [totalMintCount, setTotalMintCount] = useState("0");
+	// const [mintCount, setMintCount] = useState(1);
+	// const [timeLeft, setTimeLeft] = useState({days:0,hours:0,minutes:0,seconds:0});
+		
+	// const calculateTimeLeft = () => {
+	// 	let difference = new Date(`2021-10-03T18:00:00.000+02:00`) - new Date(); //2021-09-25T20:00:00.000+02:00
+	// 	let timeLeft = {};
+	// 	if (difference > 0) {
+	// 		timeLeft = {
+	// 			days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+	// 			hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+	// 			minutes: Math.floor((difference / 1000 / 60) % 60),
+	// 			seconds: Math.floor((difference / 1000) % 60)
+	// 		};
+	// 	}
+	// 	return timeLeft;
+	// }
+
+	useEffect(() => {
+		async function getInformation() {
+			// const count = await loadTotalMintCount();
+			// setTotalMintCount(count);
+			// setMintCount(1);
+			// addSmartContractListener();
+
+			const { address,  } = await getCurrentWalletConnected();
+			setWallet(address);
+			addWalletListener();
+		}
+  
+
+	// 	const startTimer = setInterval(() => {
+	// 		setTimeLeft(calculateTimeLeft());
+	// 		// if(timeLeft.seconds === undefined) clearInterval(startTimer);
+	// 	}, 1000);
+	// 	getInformation()
+	}, [])
+
+	// function addSmartContractListener() {
+	// 	DafeisContract.events.JoinFace({}, (error, data) => {
+	// 		if (error) {
+	// 		} else {
+	// 		}
+	// 	});
+	// }
  
+	function addWalletListener() {
+		if (window.ethereum) {
+		window.ethereum.on("accountsChanged", (accounts) => {
+			if (accounts.length > 0) {
+				setWallet(accounts[0]);
+			} else {
+				setWallet("");
+			}
+		});
+		} else {
+		}
+	}
 
-  useEffect(() => {
-    async function getInformation() {
+	const connect = async () => {
+		const walletResponse = await connectWallet();
+		setWallet(walletResponse.address);
+	};
 
-      // addSmartContractListener();
+	// const onMintPressed = async() => {
+	// 	console.log(mintCount);
+	// 	await mintDafeisCount(walletAddress, mintCount);
+	// }
 
-      const { address } = await getCurrentWalletConnected();
-      setWallet(address);
-      addWalletListener();
-    }
-    getInformation()
-  }, [])
-
-  // function addSmartContractListener() {
-  //   CryptoKittenNFT.events.JoinFace({}, (error, data) => {
-  //     if (error) {
-  //     } else {
-  //     }
-  //   });
-  // }
-
-  function addWalletListener() {
-    if (window.ethereum) {
-      window.ethereum.on("accountsChanged", (accounts) => {
-        if (accounts.length > 0) {
-          setWallet(accounts[0]);
-        } else {
-          setWallet("");
-        }
-      });
-    } else {
-    }
-  }
-
-
-  const connect = async () => {
-    const walletResponse = await connectWallet();
-    setWallet(walletResponse.address);
-  };
-  // const genesisMint = async () => {
-
-  //   await mint_genesis(address, genesisNumber);
-
-
-  // }
-  // const normalMint = async () => {
-  //   await mint_normal(address, normalNumber);}
+	// const onReserve = async() =>{
+	// 	await Reserve(walletAddress, mintCount);
+	// }
     return (
       <div className="App">
         <Header address={address} connect={connect} />
