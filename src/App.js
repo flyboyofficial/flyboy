@@ -22,21 +22,21 @@ export default function App() {
   const [address, setWallet] = useState("");
 	// const [totalMintCount, setTotalMintCount] = useState("0");
 	// const [mintCount, setMintCount] = useState(1);
-	// const [timeLeft, setTimeLeft] = useState({days:0,hours:0,minutes:0,seconds:0});
+	const [timeLeft, setTimeLeft] = useState({days:0,hours:0,minutes:0,seconds:0});
 		
-	// const calculateTimeLeft = () => {
-	// 	let difference = new Date(`2021-10-03T18:00:00.000+02:00`) - new Date(); //2021-09-25T20:00:00.000+02:00
-	// 	let timeLeft = {};
-	// 	if (difference > 0) {
-	// 		timeLeft = {
-	// 			days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-	// 			hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-	// 			minutes: Math.floor((difference / 1000 / 60) % 60),
-	// 			seconds: Math.floor((difference / 1000) % 60)
-	// 		};
-	// 	}
-	// 	return timeLeft;
-	// }
+	const calculateTimeLeft = () => {
+		let difference = new Date(`2022-01-31T18:00:00.000+02:00`) - new Date(); //
+		let timeLeft = {};
+		if (difference > 0) {
+			timeLeft = {
+				days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+				hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+				minutes: Math.floor((difference / 1000 / 60) % 60),
+				seconds: Math.floor((difference / 1000) % 60)
+			};
+		}
+		return timeLeft;
+	}
 
 	useEffect(() => {
 		async function getInformation() {
@@ -49,14 +49,16 @@ export default function App() {
 			setWallet(address);
 			addWalletListener();
 		}
-  
 
-	// 	const startTimer = setInterval(() => {
-	// 		setTimeLeft(calculateTimeLeft());
-	// 		// if(timeLeft.seconds === undefined) clearInterval(startTimer);
-	// 	}, 1000);
-	// 	getInformation()
+		const startTimer = setInterval(() => {
+			setTimeLeft(calculateTimeLeft());
+			// if(timeLeft.seconds === undefined) clearInterval(startTimer);
+		}, 1000);
+		getInformation()
 	}, [])
+
+  useEffect(() => {
+  }, [timeLeft])
 
 	// function addSmartContractListener() {
 	// 	DafeisContract.events.JoinFace({}, (error, data) => {
@@ -82,6 +84,7 @@ export default function App() {
 	const connect = async () => {
 		const walletResponse = await connectWallet();
 		setWallet(walletResponse.address);
+    console.log("ddddd", timeLeft.days);
 	};
 
 	// const onMintPressed = async() => {
@@ -92,6 +95,8 @@ export default function App() {
 	// const onReserve = async() =>{
 	// 	await Reserve(walletAddress, mintCount);
 	// }
+
+
     return (
       <div className="App">
         <Header address={address} connect={connect} />
@@ -106,12 +111,12 @@ export default function App() {
         <div className="anchorPoint" id="roadmap"></div>
         <Roadmap />
         <div className="anchorPoint" id="mint"></div>
-        <Mint address={address} connect={connect}/>
+        <Mint address={address} connect={connect} timeLeft={timeLeft}/>
         <Team />
         <div className="anchorPoint" id="faq"></div>
         <Faq />
         <Footer />
       </div>
     );
-  }
-
+  
+    }

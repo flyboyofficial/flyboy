@@ -2,7 +2,7 @@ import { React, useState } from "react";
 import Web3 from "web3"
 
 export default function Mint(props) {
-  const {address, connect} = props;
+  const {address, connect, timeLeft} = props;
   const [counter, setCounter] = useState(1);
   const setMaxValue = () => setCounter(5);
   let incrementCounter = () => setCounter(counter + 1);
@@ -25,9 +25,16 @@ export default function Mint(props) {
         <form action="#" className="mint__inner">
           <div className="mint__inner-line left"></div>
           <div className="mint__inner-line right"></div>
-          <h2>Presale will start 31,JAN, 2022,13:00GMT</h2>
+     
+            {timeLeft.days == 0 && timeLeft.hours == 0 && timeLeft.minutes == 0 && timeLeft.seconds == 0 ? 
+            (<h2>PRESALE STARTED</h2>) : 
+            (
+              <h2 style={{fontSize:'55px'}}><span style={{fontSize:'24px'}}>Presale will start 31,JAN, 2022,13:00GMT<br></br></span>{timeLeft.days} days&nbsp;&nbsp;  {timeLeft.hours} : {timeLeft.minutes} : {timeLeft.seconds}&nbsp;&nbsp;Left</h2>
+              )}
+          
+    
           <p>Total Supply: 1013/1013 </p>
-          <p>Bear NFT (0.06 ETH/ 1 Bear)</p>
+         
           <div className="mint__inner-row">
             <div className="mint__inner-row-text">mint amount</div>
             <div className="mint__inner-input">
