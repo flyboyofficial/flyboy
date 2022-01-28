@@ -66,7 +66,7 @@ export default class RoadmapSlider extends Component {
               <div className="roadmapSlider__item-index yellow">02</div>
               <h5>15% & 25% Sold Out</h5>
               <p>
-                At 15%, we make a donation of $250,000 to the Royal Flying
+                At 15%, we make a donation of $50,000 to the Royal Flying
                 Doctor Service.
                 <br />
                 <br /> At 25%, we purchase land plots from Sandbox and
