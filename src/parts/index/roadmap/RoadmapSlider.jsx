@@ -86,8 +86,7 @@ export default class RoadmapSlider extends Component {
               <h5>50% & 75% Sold Out</h5>
               <p>
                 At 50%, we list our project on Rarity.tools. Also, we will
-                launch our own launchpad and launch-fund worth half-a-million
-                dollars. This is to support members to launch their own NFT
+                launch our own launchpad and launch-fund worth dollars. This is to support members to launch their own NFT
                 projects. We will provide fundings and expertise to support one
                 of our own. FBFC is DAO (decentralised autonomous organization),
                 all fundings applications will be decided collectively by the

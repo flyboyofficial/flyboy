@@ -2,11 +2,12 @@ import { React, useState } from "react";
 import Web3 from "web3"
 
 export default function Mint(props) {
-  const {address, connect, timeLeft} = props;
-  const [counter, setCounter] = useState(1);
-  const setMaxValue = () => setCounter(5);
+  const { address, connect, timeLeft, counter, setCounter, balance, onMintPressed, totalMintCount, presaleStarted, publicsaleStarted } = props;
+  const remaining = 5 - balance;
+
+  const setMaxValue = () => setCounter(remaining);
   let incrementCounter = () => setCounter(counter + 1);
-  if(counter >= 5) {
+  if (counter >= 5) {
     incrementCounter = () => setCounter(5);
   }
   let decrementCounter = () => setCounter(counter - 1);
@@ -15,7 +16,7 @@ export default function Mint(props) {
   }
 
 
- 
+
   return (
     <section className="mint">
       <div className="mint__bg">
@@ -25,16 +26,28 @@ export default function Mint(props) {
         <form action="#" className="mint__inner">
           <div className="mint__inner-line left"></div>
           <div className="mint__inner-line right"></div>
-     
-            {timeLeft.days == 0 && timeLeft.hours == 0 && timeLeft.minutes == 0 && timeLeft.seconds == 0 ? 
-            (<h2>PRESALE STARTED</h2>) : 
-            (
-              <h2 style={{fontSize:'55px'}}><span style={{fontSize:'24px'}}>Presale will start 31,JAN, 2022,13:00GMT<br></br></span>{timeLeft.days} days&nbsp;&nbsp;  {timeLeft.hours} : {timeLeft.minutes} : {timeLeft.seconds}&nbsp;&nbsp;Left</h2>
-              )}
-          
-    
-          <p>Total Supply: 1013/1013 </p>
-         
+
+          {!publicsaleStarted ? 
+          (<><h2><span style={presaleStarted ? { fontSize: '40px' } : { fontSize: '24px' }}>
+            {!presaleStarted ? "Presale will start 31,JAN, 2022,13:00GMT" : "Presale started"}
+            <br></br></span></h2>
+          <h2 style={{ fontSize: '55px' }}>{timeLeft.days} days&nbsp;&nbsp;  {timeLeft.hours} : {timeLeft.minutes} : {timeLeft.seconds}&nbsp;&nbsp;TO GO</h2></>)
+          :
+          (<h2><span style={{ fontSize: '40px' }}>
+            Public Sale started
+          <br></br></span></h2>)
+          }
+
+
+
+          {remaining == 0 ?
+            (<p>you can't mint any more in presale</p>) :
+            (<p>you can mint {remaining} more in the presale</p>)}
+
+
+
+          <p>Total Supply: {totalMintCount}/1013 </p>
+
           <div className="mint__inner-row">
             <div className="mint__inner-row-text">mint amount</div>
             <div className="mint__inner-input">
@@ -54,16 +67,23 @@ export default function Mint(props) {
                   +
                 </button>
               </div>
-             <div className="max" onClick={setMaxValue}>MAX</div>
+              <div className="max" onClick={setMaxValue}>MAX</div>
             </div>
           </div>
           <div className="mint__inner-footer">
-            {!address ? 
-            <button type="button" id="mint-button" onClick={connect} className="button primary">
-              Connect Wallet
-            </button>
-            :
-            <button type="button" className="button primary">MINT</button>
+            {!address ?
+              <button type="button" id="mint-button" onClick={connect} className="button primary">
+                Connect Wallet
+              </button>
+              :
+              (<>
+                {
+                  balance == 5 ?
+                    <button type="button" className="button primary" onClick={onMintPressed} disabled>MINT</button>
+                    :
+                    <button type="button" className="button primary" onClick={onMintPressed} >MINT</button>
+                }
+              </>)
             }
           </div>
         </form>
