@@ -28,10 +28,10 @@ export const loadTotalMintCount = async () => {
  return message;
 };
 
-// export const getCurrentMessage = async () => {
-//   var message = await FlyBoyNFT.methods.message().call();
-//   return message;
-// };
+export const getCurrentMessage = async () => {
+ var message = await FlyBoyNFT.methods.message().call();
+ return message;
+};
 
 export const connectWallet = async () => {
  if (window.ethereum) {
@@ -47,25 +47,25 @@ export const connectWallet = async () => {
    } catch (err) {
      return {
        address: "",
-       status: "😥 " + err.message,
+       status: "" ,
      };
    }
  } else {
-   // return {
-   //   address: "",
-   //   status: (
-   //     <span>
-   //       <p>
-   //         {" "}
-   //         🦊{" "}
-   //         <a  rel="noreferrer"  target="_blank" href={`https://metamask.io/download.html`}>
-   //           You must install Metamask, a virtual Ethereum wallet, in your
-   //           browser.
-   //         </a>
-   //       </p>
-   //     </span>
-   //   ),
-   // };
+   return {
+     address: "",
+     status: (
+       <span>
+         <p>
+           {" "}
+           🦊{" "}
+           <a rel="noreferrer"  target="_blank" href={`https://metamask.io/download.html`}>
+             You must install Metamask, a virtual Ethereum wallet, in your
+             browser.
+           </a>
+         </p>
+       </span>
+     ),
+   };
  }
 };
 
@@ -84,19 +84,19 @@ export const getCurrentWalletConnected = async () => {
    }
  } 
  else {
-//     return { address: "", status: (
-//         <span>
-//           <p>
-//             {" "}
-//             🦊{" "}
-//             <a  rel="noreferrer"  target="_blank" href={`https://metamask.io/download.html`}>
-//               You must install Metamask, a virtual Ethereum wallet, in your
-//               browser.
-//             </a>
-//           </p>
-//         </span>
-//       ),
-//     };
+   return { address: "", status: (
+       <span>
+         <p>
+           {" "}
+           🦊{" "}
+           <a  rel="noreferrer"  target="_blank" href={`https://metamask.io/download.html`}>
+             You must install Metamask, a virtual Ethereum wallet, in your
+             browser.
+           </a>
+         </p>
+       </span>
+     ),
+   };
  }
 };
 
@@ -127,19 +127,19 @@ export const updateMessage = async (address, message) => {
      method: "eth_sendTransaction",
      params: [transactionParameters],
    });
-   // return {
-   //   status: (
-   //     <span>
-   //       ✅{" "}
-   //       <a  rel="noreferrer"  target="_blank" href={`https://rinkeby.etherscan.io/tx/${txHash}`}>
-   //         View the status of your transaction on Etherscan!
-   //       </a>
-   //       <br />
-   //       ℹ️ Once the transaction is verified by the network, the message will
-   //       be updated automatically.
-   //     </span>
-   //   ),
-   // };
+   return {
+     status: (
+       <span>
+         ✅{" "}
+         <a  rel="noreferrer"  target="_blank" href={`https://rinkeby.etherscan.io/tx/${txHash}`}>
+           View the status of your transaction on Etherscan!
+         </a>
+         <br />
+         ℹ️ Once the transaction is verified by the network, the message will
+         be updated automatically.
+       </span>
+     ),
+   };
  } catch (error) {
    return {
      status: "😥 " + error.message,
@@ -171,7 +171,53 @@ export const mint = async (address, ispresale, counter, price, balance) => {
      params: [transactionParameters],
    });
 
-   //return {
+   return {
+     status: (
+       <span>
+         ✅{" "}
+         <a  rel="noreferrer"  target="_blank" href={`https://rinkeby.etherscan.io/tx/${txHash}`}>
+           View the status of your transaction on Etherscan!
+         </a>
+         <br />
+         ℹ️ Once the transaction is verified by the network, the message will
+         be updated automatically.
+       </span>
+     ),
+   };
+ } catch (error) {
+   console.log(error);
+   return {
+     status: "😥 " + error.message,
+   };
+ }  
+}
+
+
+
+export const Reserve = async (address, mintCount) => {
+ if (!window.ethereum || address === null) {
+   return {
+     status:
+       "💡 Connect your Metamask wallet to update the message on the blockchain.",
+   };
+ }
+ //set up transaction parameters
+ console.log(mintCount);
+ const transactionParameters = {
+   to: contractAddress, // Required except during contract publications.
+   from: address, // must match user's active address.
+   data: FlyBoyNFT.methods
+     .reserve(mintCount)
+     .encodeABI(),
+ };
+
+ try {
+   const txHash = await window.ethereum.request({
+     method: "eth_sendTransaction",
+     params: [transactionParameters],
+   });
+
+   // return {
    //   status: (
    //     <span>
    //       ✅{" "}
@@ -191,52 +237,6 @@ export const mint = async (address, ispresale, counter, price, balance) => {
    };
  }  
 }
-
-
-
-// export const Reserve = async (address, mintCount) => {
-//   if (!window.ethereum || address === null) {
-//     return {
-//       status:
-//         "💡 Connect your Metamask wallet to update the message on the blockchain.",
-//     };
-//   }
-//   //set up transaction parameters
-//   console.log(mintCount);
-//   const transactionParameters = {
-//     to: contractAddress, // Required except during contract publications.
-//     from: address, // must match user's active address.
-//     data: FlyBoyNFT.methods
-//       .reserve(mintCount)
-//       .encodeABI(),
-//   };
-
-//   try {
-//     const txHash = await window.ethereum.request({
-//       method: "eth_sendTransaction",
-//       params: [transactionParameters],
-//     });
-
-//     // return {
-//     //   status: (
-//     //     <span>
-//     //       ✅{" "}
-//     //       <a  rel="noreferrer"  target="_blank" href={`https://rinkeby.etherscan.io/tx/${txHash}`}>
-//     //         View the status of your transaction on Etherscan!
-//     //       </a>
-//     //       <br />
-//     //       ℹ️ Once the transaction is verified by the network, the message will
-//     //       be updated automatically.
-//     //     </span>
-//     //   ),
-//     // };
-//   } catch (error) {
-//     console.log(error);
-//     return {
-//       status: "😥 " + error.message,
-//     };
-//   }  
-// }
 
 export const Pause = async (address, flag) => {
  if (!window.ethereum || address === null) {
@@ -260,19 +260,19 @@ export const Pause = async (address, flag) => {
      params: [transactionParameters],
    });
 
-   // return {
-   //    status: (
-   //     <span>
-   //       ✅{" "}
-   //       <a  rel="noreferrer"  target="_blank" href={`https://rinkeby.etherscan.io/tx/${txHash}`}>
-   //         View the status of your transaction on Etherscan!
-   //       </a>
-   //       <br />
-   //       ℹ️ Once the transaction is verified by the network, the message will
-   //       be updated automatically.
-   //     </span>
-   //   ),
-   // };
+   return {
+      status: (
+       <span>
+         ✅{" "}
+         <a  rel="noreferrer"  target="_blank" href={`https://rinkeby.etherscan.io/tx/${txHash}`}>
+           View the status of your transaction on Etherscan!
+         </a>
+         <br />
+         ℹ️ Once the transaction is verified by the network, the message will
+         be updated automatically.
+       </span>
+     ),
+   };
  } catch (error) {
    console.log(error);
    return {
@@ -340,19 +340,19 @@ export const withdrawAll = async (address, mintCount) => {
      params: [transactionParameters],
    });
 
-   // return {
-   //   status: (
-   //     <span>
-   //       ✅{" "}
-   //       <a  rel="noreferrer"  target="_blank" href={`https://rinkeby.etherscan.io/tx/${txHash}`}>
-   //         View the status of your transaction on Etherscan!
-   //       </a>
-   //       <br />
-   //       ℹ️ Once the transaction is verified by the network, the message will
-   //       be updated automatically.
-   //     </span>
-   //   ),
-   // };
+   return {
+     status: (
+       <span>
+         ✅{" "}
+         <a  rel="noreferrer"  target="_blank" href={`https://rinkeby.etherscan.io/tx/${txHash}`}>
+           View the status of your transaction on Etherscan!
+         </a>
+         <br />
+         ℹ️ Once the transaction is verified by the network, the message will
+         be updated automatically.
+       </span>
+     ),
+   };
  } catch (error) {
    console.log(error);
    return {

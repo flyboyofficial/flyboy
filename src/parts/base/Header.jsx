@@ -83,17 +83,20 @@ export default function Header(props) {
                   <img src="images/icons/discord.svg" alt="" />
                 </a>
               </div>
-              <button className="button primary" onClick={connect}>
+             
                 {address !== "" &&
-                  `${address.slice(0, 6)}...${address.slice(
+                 <button className="button primary">
+                  {address.slice(0, 6)}...{address.slice(
                     address.length - 4,
                     address.length
-                  )}`
+                  )}
+                  </button>
                 }
                 {address === '' &&
-                  `Connect MetaMask`
+                 <button className="button primary" onClick={connect}>
+                 Connect MetaMask
+                </button>
                 }
-              </button>
             </div>
           </nav>
           <div

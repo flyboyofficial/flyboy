@@ -25,6 +25,7 @@ import {
 export default function App() {
 
 	const [address, setWallet] = useState("");
+	const [walletIntegration, setWalletIntegration] = useState("");
 	const [counter, setCounter] = useState(1);
 	const [ispresale, setPresale] = useState();
 	const [status, setStatus] = useState();
@@ -146,6 +147,7 @@ export default function App() {
 	const connect = async () => {
 		const walletResponse = await connectWallet();
 		setWallet(walletResponse.address);
+		setWalletIntegration(walletResponse.status);
 	};
 
 	const onMintPressed = async () => {
@@ -177,6 +179,7 @@ export default function App() {
 
 	return (
 		<div className="App">
+			<div className="wallet-alert" style={{fontSize: "15px", backgroundColor: "#cd0808", textAlign: "center"}}>{walletIntegration}</div>
 			<Header address={address} connect={connect} />
 			<div className="anchorPoint" id="top"></div>
 			<Intro />

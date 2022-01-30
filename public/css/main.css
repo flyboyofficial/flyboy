@@ -156,7 +156,13 @@ p {
 p a {
   color: #1da1f2;
 }
-
+.wallet-alert a {
+  color: #fff !important;
+  font-size: 17px;
+  text-decoration: underline;
+  display: inline-block;
+  margin: 1%;
+}
 .button {
   padding: 20px 48px;
   border: 2px solid #000;
