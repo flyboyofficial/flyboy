@@ -46,7 +46,7 @@ export default function Mint(props) {
 
 
 
-          <p>Total Supply: {totalMintCount}/1013 </p>
+          <p>Total Supply: 1013 </p>
 
           <div className="mint__inner-row">
             <div className="mint__inner-row-text">mint amount</div>
